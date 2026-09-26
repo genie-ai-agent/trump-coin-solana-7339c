@@ -1,0 +1,23 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SiteHeader from "@/components/SiteHeader.astro";
+import SiteFooter from "@/components/SiteFooter.astro";
+import OwnerAllowlist from "@/components/OwnerAllowlist";
+---
+
+<Layout title="Allowlist · admin" description="Private allowlist entries.">
+  <SiteHeader active="admin" />
+  <main class="mx-auto w-full max-w-3xl px-4 py-10 sm:px-6 sm:py-14">
+    <p class="text-[0.65rem] tracking-[0.22em] text-accent uppercase">private</p>
+    <h1 class="mt-3 font-display text-2xl font-bold tracking-tight sm:text-4xl">
+      Allowlist entries<span class="cursor"></span>
+    </h1>
+    <p class="mt-4 text-sm leading-relaxed text-muted-foreground">
+      Everyone who asked for early access. New entries also land in your Genie chat as they come in.
+    </p>
+    <div class="mt-8">
+      <OwnerAllowlist client:load />
+    </div>
+  </main>
+  <SiteFooter />
+</Layout>

@@ -1,0 +1,30 @@
+---
+const { active = "home" } = Astro.props;
+---
+
+<header class="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
+  <div class="mx-auto flex w-full max-w-5xl items-center gap-4 px-4 py-3 sm:px-6">
+    <a href="/" class="font-display text-sm font-bold tracking-[0.18em] uppercase">
+      <span class="text-primary">$</span>charity<span class="text-muted-foreground">/sol</span>
+    </a>
+    <nav class="ml-auto flex items-center gap-4 text-[0.65rem] tracking-[0.18em] uppercase">
+      <a
+        href="/#chain"
+        class="hidden hover:text-primary sm:inline text-muted-foreground">chain check</a
+      >
+      <a href="/#proceeds" class="hidden hover:text-primary sm:inline text-muted-foreground">pledge</a>
+      <a
+        href="/admin"
+        class:list={[
+          "hover:text-primary",
+          active === "admin" ? "text-primary" : "text-muted-foreground",
+        ]}>admin</a
+      >
+      <a
+        href="/#allowlist"
+        class="border border-primary px-3 py-1.5 font-bold text-primary hover:bg-primary hover:text-primary-foreground"
+        >allowlist</a
+      >
+    </nav>
+  </div>
+</header>

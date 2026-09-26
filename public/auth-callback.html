@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Signing you in…</title>
+<body style="background:#0b0f14;color:#7de2a0;font-family:ui-monospace,monospace;padding:2rem">
+  <p>&gt; finalizing session…</p>
+  <script type="module">
+    import { createClient } from "https://esm.sh/@neondatabase/neon-js@0.7.0-beta";
+
+    const db = createClient({
+      auth: { url: "https://ep-soft-sun-b82v1avc.neonauth.c-14.us-east-1.aws.neon.tech/neondb/auth" },
+      dataApi: { url: "https://ep-soft-sun-b82v1avc.apirest.c-14.us-east-1.aws.neon.tech/neondb/rest/v1" },
+    });
+
+    await db.auth.getSession();
+    window.opener?.postMessage("signed-in", window.location.origin);
+    window.close();
+  </script>
+</body>

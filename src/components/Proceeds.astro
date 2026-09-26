@@ -1,0 +1,66 @@
+---
+const allocations = [
+  { label: "Nonprofit", pct: 100, tone: "primary", note: "[nonprofit name] · paid out on a fixed cadence" },
+  { label: "Team / founders", pct: 0, tone: "muted", note: "no allocation, no vest, no advisor bag" },
+  { label: "Discretionary treasury", pct: 0, tone: "muted", note: "nothing held back for “marketing”" },
+];
+---
+
+<section id="proceeds" class="mx-auto w-full max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
+  <div class="rule mb-8"></div>
+
+  <p class="text-[0.65rem] tracking-[0.22em] text-primary uppercase">the pledge</p>
+  <h2 class="mt-3 font-display text-2xl font-bold tracking-tight sm:text-4xl">
+    Where every dollar goes.
+  </h2>
+  <p class="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+    “Proceeds go to charity” is the most-broken promise in this corner of crypto, because it's almost
+    always unverifiable. On Solana it doesn't have to be: publish the treasury address, publish the
+    nonprofit's receiving address, and every payout becomes a link anyone can click.
+  </p>
+
+  <ul class="mt-8 space-y-px">
+    {
+      allocations.map((a) => (
+        <li class="border border-border bg-card/60 px-3 py-4 sm:px-4">
+          <div class="flex items-baseline justify-between gap-3">
+            <span class="text-sm font-bold tracking-wide">{a.label}</span>
+            <span
+              class:list={[
+                "text-2xl font-bold tabular-nums",
+                a.tone === "primary" ? "text-primary" : "text-muted-foreground",
+              ]}
+            >
+              {a.pct}%
+            </span>
+          </div>
+          <div class="mt-2 h-1 w-full bg-muted">
+            <div
+              class:list={["h-1", a.tone === "primary" ? "bg-primary" : "bg-border"]}
+              style={`width:${a.pct}%`}
+            >
+            </div>
+          </div>
+          <p class="mt-2 text-[0.7rem] text-muted-foreground">{a.note}</p>
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="mt-8 grid gap-px border border-border bg-border sm:grid-cols-2">
+    <div class="bg-card px-4 py-5">
+      <p class="text-[0.6rem] tracking-[0.18em] text-muted-foreground uppercase">treasury wallet</p>
+      <p class="mt-2 break-all text-sm text-accent">[treasury wallet address]</p>
+      <p class="mt-2 text-[0.7rem] text-muted-foreground">
+        Multisig, not a single key. Published before launch so the history has no gap.
+      </p>
+    </div>
+    <div class="bg-card px-4 py-5">
+      <p class="text-[0.6rem] tracking-[0.18em] text-muted-foreground uppercase">recipient</p>
+      <p class="mt-2 break-all text-sm text-accent">[nonprofit name + wallet or link]</p>
+      <p class="mt-2 text-[0.7rem] text-muted-foreground">
+        Named with their written permission, with a quarterly receipt posted publicly.
+      </p>
+    </div>
+  </div>
+</section>

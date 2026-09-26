@@ -1,0 +1,76 @@
+---
+const facts = [
+  { k: "chain", v: "Solana", note: "SPL token, not an ERC-20" },
+  { k: "launched", v: "Jan 17, 2025", note: "two days before the second inauguration" },
+  { k: "mint", v: "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN", note: "verifiable on Solscan" },
+  { k: "supply", v: "1,000,000,000 fixed", note: "200M public at launch, 800M retained" },
+  { k: "retained by", v: "CIC Digital LLC + Fight Fight Fight LLC", note: "vesting through Dec 2027" },
+  { k: "circulating", v: "~270M", note: "as of Sept 2026" },
+];
+---
+
+<section id="chain" class="mx-auto w-full max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
+  <div class="rule mb-8"></div>
+
+  <p class="text-[0.65rem] tracking-[0.22em] text-accent uppercase">chain check · run this first</p>
+  <h2 class="mt-3 font-display text-2xl font-bold tracking-tight sm:text-4xl">
+    $TRUMP is already on Solana.
+  </h2>
+
+  <div class="mt-6 border-l-2 border-accent bg-accent/5 px-4 py-4 text-sm leading-relaxed sm:px-5">
+    <p>
+      The brief was “bridge the Ethereum Trump coin to Solana, there's no Trump coin on Solana.”
+      That's backwards. The official <span class="text-accent">$TRUMP</span> has been a native SPL
+      token on Solana since January 2025 — Solana is its home chain, and there's nothing to bridge
+      <em>to</em>.
+    </p>
+    <p class="mt-3 text-muted-foreground">
+      Whatever you saw on Ethereum is one of two things: a wrapped representation of the Solana
+      token, or an unrelated ERC-20 that borrowed the name. There are dozens of those on both
+      chains. Worth pinning down which one before any capital moves.
+    </p>
+  </div>
+
+  <dl class="mt-8 divide-y divide-border border border-border bg-card/60">
+    {
+      facts.map((f) => (
+        <div class="grid gap-1 px-3 py-3 sm:grid-cols-[9rem_1fr] sm:items-baseline sm:gap-4 sm:px-4">
+          <dt class="text-[0.65rem] tracking-[0.18em] text-muted-foreground uppercase">{f.k}</dt>
+          <dd>
+            <span class="break-all text-sm font-bold text-primary">{f.v}</span>
+            <span class="block text-[0.7rem] text-muted-foreground">{f.note}</span>
+          </dd>
+        </div>
+      ))
+    }
+  </dl>
+
+  <div class="mt-8 grid gap-4 sm:grid-cols-3">
+    <div class="border border-border bg-card/60 p-4">
+      <p class="text-[0.6rem] tracking-[0.18em] text-destructive uppercase">dead end</p>
+      <p class="mt-2 text-sm leading-relaxed">
+        Bridging TRUMP “onto” Solana. It's already there. A bridge in that direction wraps a wrapper.
+      </p>
+    </div>
+    <div class="border border-border bg-card/60 p-4">
+      <p class="text-[0.6rem] tracking-[0.18em] text-muted-foreground uppercase">possible</p>
+      <p class="mt-2 text-sm leading-relaxed">
+        Wrapping the Solana token <em>out</em> to Ethereum or Base, if the demand is actually on the
+        EVM side. That's a real gap, just the opposite of the one described.
+      </p>
+    </div>
+    <div class="border border-primary/40 bg-primary/5 p-4">
+      <p class="text-[0.6rem] tracking-[0.18em] text-primary uppercase">what this page is</p>
+      <p class="mt-2 text-sm leading-relaxed">
+        A new, independent Solana token with one distinguishing feature: 100% of proceeds leave for a
+        nonprofit, and you can watch them go.
+      </p>
+    </div>
+  </div>
+
+  <p class="mt-6 text-[0.7rem] leading-relaxed text-muted-foreground">
+    Sources: Wikipedia “$Trump”, TRM Labs mint-address trace, CoinGecko “Official Trump”. Not
+    affiliated with, endorsed by, or connected to Donald Trump, CIC Digital LLC, Fight Fight Fight
+    LLC, or GetTrumpMemes.com.
+  </p>
+</section>

@@ -1,0 +1,37 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SiteHeader from "@/components/SiteHeader.astro";
+import SiteFooter from "@/components/SiteFooter.astro";
+import Hero from "@/components/Hero.astro";
+import ChainFacts from "@/components/ChainFacts.astro";
+import Proceeds from "@/components/Proceeds.astro";
+import Roadmap from "@/components/Roadmap.astro";
+import AllowlistForm from "@/components/AllowlistForm";
+---
+
+<Layout title="[$TICKER] · a Solana charity coin, 100% to the nonprofit">
+  <SiteHeader active="home" />
+  <main>
+    <Hero />
+    <ChainFacts />
+    <Proceeds />
+    <Roadmap />
+
+    <section id="allowlist" class="mx-auto w-full max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
+      <div class="rule mb-8"></div>
+      <p class="text-[0.65rem] tracking-[0.22em] text-primary uppercase">allowlist</p>
+      <h2 class="mt-3 font-display text-2xl font-bold tracking-tight sm:text-4xl">
+        Get the address first<span class="cursor"></span>
+      </h2>
+      <p class="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+        Allowlist gets the mint and treasury addresses before the public post, so you can verify the
+        100% pledge on-chain before anyone else is buying. Say which cause you'd want it to fund —
+        that's still open.
+      </p>
+      <div class="mt-8">
+        <AllowlistForm client:load />
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</Layout>

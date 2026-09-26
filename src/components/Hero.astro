@@ -1,0 +1,64 @@
+---
+import MarketStrip from "@/components/MarketStrip";
+---
+
+<section class="mx-auto w-full max-w-5xl px-4 pt-10 pb-6 sm:px-6 sm:pt-16">
+  <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-[0.65rem] tracking-[0.22em] uppercase">
+    <span class="border border-primary/50 bg-primary/10 px-2 py-1 text-primary">pre-launch</span>
+    <span class="text-muted-foreground">solana · spl</span>
+    <span class="text-muted-foreground">100% to charity</span>
+  </div>
+
+  <h1
+    class="mt-6 font-display text-4xl leading-[1.05] font-bold tracking-tight sm:text-6xl lg:text-7xl"
+  >
+    A Trump coin<br />
+    <span class="text-primary">where the money leaves</span><br />
+    and doesn't come back.
+  </h1>
+
+  <p class="mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+    One token on Solana. Every dollar it raises goes to
+    <span class="text-accent">[nonprofit name]</span> — no team allocation, no insider unlock, no
+    treasury that quietly becomes someone's salary. The wallet is public from day one, so the pledge is
+    checkable instead of claimed.
+  </p>
+
+  <dl class="mt-8 grid grid-cols-2 gap-px border border-border bg-border sm:grid-cols-4">
+    <div class="bg-card px-3 py-4">
+      <dt class="text-[0.6rem] tracking-[0.18em] text-muted-foreground uppercase">ticker</dt>
+      <dd class="mt-1 text-lg font-bold text-accent">[$TICKER]</dd>
+    </div>
+    <div class="bg-card px-3 py-4">
+      <dt class="text-[0.6rem] tracking-[0.18em] text-muted-foreground uppercase">to charity</dt>
+      <dd class="mt-1 text-lg font-bold text-primary">100%</dd>
+    </div>
+    <div class="bg-card px-3 py-4">
+      <dt class="text-[0.6rem] tracking-[0.18em] text-muted-foreground uppercase">team cut</dt>
+      <dd class="mt-1 text-lg font-bold">0%</dd>
+    </div>
+    <div class="bg-card px-3 py-4">
+      <dt class="text-[0.6rem] tracking-[0.18em] text-muted-foreground uppercase">launch</dt>
+      <dd class="mt-1 text-lg font-bold text-muted-foreground">[date]</dd>
+    </div>
+  </dl>
+
+  <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+    <a
+      href="#allowlist"
+      class="inline-flex min-h-[48px] items-center justify-center border border-primary bg-primary px-6 text-sm font-bold tracking-widest text-primary-foreground uppercase transition-transform hover:-translate-y-0.5 hover:shadow-[0_6px_0_0_oklch(0.82_0.19_145_/_0.35)]"
+    >
+      join the allowlist
+    </a>
+    <a
+      href="#chain"
+      class="inline-flex min-h-[48px] items-center justify-center border border-border px-6 text-sm font-bold tracking-widest uppercase transition-colors hover:border-accent hover:text-accent"
+    >
+      read the chain check
+    </a>
+  </div>
+
+  <div class="mt-10">
+    <MarketStrip client:load />
+  </div>
+</section>
